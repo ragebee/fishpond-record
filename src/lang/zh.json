@@ -1,0 +1,24 @@
+{
+    "": "无",
+    "NULL": "无",
+    "null": "无",
+    "Null": "无",
+    "None": "无",
+    "bet_id": "投注单号",
+    "bet_record_status": "注单状态",
+    "bet_time": "投注时间",
+    "last_update_time": "最后更新时间",
+    "bet_amount": "投注金额",
+    "effective_bet_amount": "有效投注金额",
+    "payment": "派彩金额",
+
+
+    "bet-record": {
+        "0" : "未投注成功的注单",
+        "1" : "确认中",
+        "2" : "已确认",
+        "3" : "已结算",
+        "4" : "已撤单",
+        "5" : "已退单"
+    }
+}

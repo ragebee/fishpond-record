@@ -1,0 +1,29 @@
+{
+    "name": "ragebee/fishpond-record",
+    "description": "Addition fishpond library.",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://ragebee.bet777.club"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "ragebee/fishpond": "dev-master",
+        "laravel/framework": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ragebee\\FishpondRecord\\": "src"
+        }
+    },
+    "minimum-stability": "dev",
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    }
+}
