@@ -9,7 +9,7 @@
     ],
     "require": {
         "php": "^7.3",
-        "ragebee/fishpond": "1.x-dev",
+        "ragebee/fishpond": "dev-master",
         "laravel/framework": "^8.0"
     },
     "autoload": {
