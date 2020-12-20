@@ -42,7 +42,7 @@ abstract class AbstractBetRecordMethod
         $betRecord->createdAt = $this->getCreatedAt($sourceBetRecord);
 
         // 注單更新時間，電子機率類的通常會一樣。
-        $betRecord->updatedAt = $this->getStatus($sourceBetRecord) === BetRecordInterface::STATUS_ACTIVE
+        $betRecord->updatedAt = $this->getStatus($sourceBetRecord) === BetRecordInterface::STATUS_OPEN
         ? ''
         : $this->getUpdatedAt($sourceBetRecord);
 
@@ -53,7 +53,7 @@ abstract class AbstractBetRecordMethod
         $betRecord->validBetAmount = $this->calculateValidBetAmount($sourceBetRecord);
 
         // 派彩金額
-        $betRecord->payment = $this->getStatus($sourceBetRecord) === BetRecordInterface::STATUS_ACTIVE
+        $betRecord->payment = $this->getStatus($sourceBetRecord) === BetRecordInterface::STATUS_OPEN
         ? ''
         : $this->calculatePayment($sourceBetRecord);
 
@@ -75,7 +75,7 @@ abstract class AbstractBetRecordMethod
 
     abstract public function getGameCode($betRecord): string;
 
-    abstract public function getStatus($betRecord): int;
+    abstract public function getStatus($betRecord): string;
 
     abstract public function getBetAmount($betRecord): string;
 
@@ -111,7 +111,7 @@ abstract class AbstractBetRecordMethod
 
     protected function calculateValidBetAmount($betRecord): string
     {
-        if ($this->getStatus($betRecord) === BetRecordInterface::STATUS_ACTIVE) {
+        if ($this->getStatus($betRecord) === BetRecordInterface::STATUS_OPEN) {
             return '';
         }
 
